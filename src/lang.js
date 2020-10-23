@@ -4,7 +4,7 @@ const lang = {
   en: {
     appName: "Timeline Tool",
     nav: [
-      { name: "Timeline", id: "Editor" },
+      { name: "Editor", id: "Editor" },
       { name: "Settings", id: "Settings" },
     ],
   },
