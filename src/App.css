@@ -7,5 +7,5 @@
   padding: 2.2em 0.2em 3.2em 0.2em;
   text-align: initial;
   max-height: 100vh;
-  overflow-x: scroll;
+  overflow-y: auto;
 }
