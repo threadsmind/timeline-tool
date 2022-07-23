@@ -1,9 +1,24 @@
 <script setup lang="ts">
-  defineProps<{ msg: string }>()
+  import AppBar from './AppBar.vue'
+  import AppMenu from './AppMenu.vue'
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <div class="layout full-height">
+    <AppMenu />
+    <AppBar />
+    <div class="view full-height">mainView</div>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+  .layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .view {
+    max-height: 100%;
+    max-width: 100%;
+    overflow-y: auto;
+  }
+</style>

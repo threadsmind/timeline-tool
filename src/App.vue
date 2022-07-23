@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <AppLayout msg="Timeline Tool" />
+  <AppLayout />
 </template>
 
 <style>
@@ -31,6 +31,8 @@
     box-sizing: border-box;
     max-width: 100%;
     max-height: 100%;
+    color: var(--primary);
+    background-color: var(--secondary);
   }
   body,
   html {
@@ -67,6 +69,15 @@
   button:focus,
   button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  #app {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .full-height {
+    height: 100%;
   }
 
   @media (prefers-color-scheme: light) {
