@@ -1,12 +1,25 @@
 <script setup lang="ts">
   import { editorStore } from '@s/drawerStore'
+  import { TimelineItem, timelineStore } from '@s/timelineStore'
+
+  const props = defineProps<{
+    timelineItem: TimelineItem
+  }>()
+
+  const handleEdit = () => {
+    timelineStore.focusItem = props.timelineItem
+    editorStore.toggleMenu()
+  }
+  const handleDelete = () => {
+    timelineStore.removeItem(props.timelineItem)
+  }
 </script>
 
 <template>
   <div class="editor-list-item">
     <div class="item-title"><slot></slot></div>
-    <button class="full-height" @click="editorStore.toggleMenu">edit</button>
-    <button class="full-height delete">del</button>
+    <button class="full-height" @click="handleEdit">edit</button>
+    <button class="full-height delete" @click="handleDelete">del</button>
   </div>
 </template>
 

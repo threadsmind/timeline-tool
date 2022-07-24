@@ -1,23 +1,30 @@
 <script setup lang="ts">
   import { editorStore } from '@s/drawerStore'
+  import { TimelineItem, timelineStore } from '@s/timelineStore'
   import EditorListItem from './EditorListItem.vue'
-  const btnArray = new Array(20)
+
+  const handleNewEntry = () => {
+    timelineStore.setFocus(new TimelineItem('', '', 0, ''))
+    editorStore.toggleMenu()
+  }
 </script>
 
 <template>
   <div class="full-height editor-tab">
     <div class="list-container">
-      <div v-if="btnArray" class="list-scroll-panel">
+      <div v-if="timelineStore.items.length !== 0" class="list-scroll-panel">
         <ul>
-          <li v-for="item in btnArray" :key="`btn${item}`">
-            <EditorListItem>{{ `btn${item}` }}</EditorListItem>
+          <li v-for="item in timelineStore.items" :key="item.id">
+            <EditorListItem :timeline-item="item">{{
+              item.title
+            }}</EditorListItem>
           </li>
         </ul>
       </div>
       <div v-else class="tab-panel">No timeline data. =(</div>
     </div>
     <div class="button-container">
-      <button @click="editorStore.toggleMenu">New Entry</button>
+      <button @click="handleNewEntry">New Entry</button>
     </div>
   </div>
 </template>
