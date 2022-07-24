@@ -69,7 +69,7 @@
     margin: 0;
   }
   li {
-    margin-top: 0.5rem;
+    margin-top: var(--spacing);
   }
   button {
     width: 100%;

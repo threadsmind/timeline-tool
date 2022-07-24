@@ -32,6 +32,8 @@
     --z-index-menu: 50;
 
     --height-appBar: 3rem;
+
+    --spacing: 0.5rem;
   }
   * {
     box-sizing: border-box;
@@ -70,7 +72,7 @@
     color: var(--palette-secondary);
     border-radius: 0;
     border-style: none;
-    padding: 0.5rem;
+    padding: var(--spacing);
   }
   button:focus,
   button:focus-visible {
@@ -84,6 +86,10 @@
 
   .full-height {
     height: 100%;
+  }
+
+  .tab-panel {
+    margin: var(--spacing);
   }
 
   @media (prefers-color-scheme: light) {

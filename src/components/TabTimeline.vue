@@ -1,5 +1,7 @@
 <script setup lang="ts"></script>
 
-<template>Timeline Tab</template>
+<template>
+  <div class="tab-panel">Timeline Tab</div>
+</template>
 
 <style scoped></style>
