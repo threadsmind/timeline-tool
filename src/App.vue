@@ -28,7 +28,9 @@
     --palette-warn: #d01742;
 
     --z-index-appBar: 100;
-    --z-index-menu: 50;
+    --z-index-menu: 55;
+    --z-index-editor: 50;
+    --z-index-drawer-bg: 45;
 
     --height-appBar: 3rem;
 

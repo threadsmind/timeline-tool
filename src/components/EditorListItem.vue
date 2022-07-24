@@ -1,9 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import { editorStore } from '@s/drawerStore'
+</script>
 
 <template>
   <div class="editor-list-item">
     <div class="item-title"><slot></slot></div>
-    <button class="full-height">edit</button>
+    <button class="full-height" @click="editorStore.toggleMenu">edit</button>
     <button class="full-height delete">del</button>
   </div>
 </template>

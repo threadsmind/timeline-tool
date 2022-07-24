@@ -1,4 +1,4 @@
-import TabEditorVue from '@c/TabEditor.vue'
+import TabEditorListVue from '@c/TabEditorList.vue'
 import TabLandingVue from '@c/TabLanding.vue'
 import TabTimelineVue from '@c/TabTimeline.vue'
 import { Component, reactive } from 'vue'
@@ -34,7 +34,7 @@ export class TabState {
 
 export const tabMap = {
   landing: TabLandingVue,
-  editor: TabEditorVue,
+  editor: TabEditorListVue,
   timeline: TabTimelineVue,
 } as TabMap
 

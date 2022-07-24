@@ -1,11 +1,16 @@
 <script setup lang="ts">
-  import { menuStore } from '@s/menuStore'
+  import { editorStore, menuStore } from '@s/drawerStore'
   import { tabStore } from '@s/tabStore'
+
+  const toggleMenu = () => {
+    menuStore.toggleMenu()
+    editorStore.isOpen && editorStore.toggleMenu()
+  }
 </script>
 
 <template>
   <div class="appbar">
-    <button class="full-height" @click="menuStore.toggleMenu">menu</button>
+    <button class="full-height" @click="toggleMenu">menu</button>
     <div class="apptitle full-height">
       <h1>{{ tabStore.currentTab.title }}</h1>
     </div>

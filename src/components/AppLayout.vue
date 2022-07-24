@@ -2,11 +2,13 @@
   import { tabMap, tabStore } from '@s/tabStore'
   import AppBar from './AppBar.vue'
   import AppMenu from './AppMenu.vue'
+  import EditorForm from './EditorForm.vue'
 </script>
 
 <template>
   <div class="layout full-height">
     <AppMenu />
+    <EditorForm />
     <AppBar />
     <div class="view full-height">
       <component

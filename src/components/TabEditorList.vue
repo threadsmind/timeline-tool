@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import { editorStore } from '@s/drawerStore'
   import EditorListItem from './EditorListItem.vue'
   const btnArray = new Array(20)
 </script>
@@ -16,7 +17,7 @@
       <div v-else class="tab-panel">No timeline data. =(</div>
     </div>
     <div class="button-container">
-      <button>New Entry</button>
+      <button @click="editorStore.toggleMenu">New Entry</button>
     </div>
   </div>
 </template>

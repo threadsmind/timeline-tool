@@ -13,3 +13,6 @@ export class MenuState {
 
 const menuState = new MenuState()
 export const menuStore = reactive(menuState)
+
+const editorState = new MenuState()
+export const editorStore = reactive(editorState)
