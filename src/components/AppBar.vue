@@ -1,24 +1,29 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import { menuStore } from '@s/menuStore'
+  import { tabStore } from '@s/tabStore'
+</script>
 
 <template>
   <div class="appbar">
-    <button class="full-height">menu</button>
+    <button class="full-height" @click="menuStore.toggleMenu">menu</button>
     <div class="apptitle full-height">
-      <h1>TIMELINE TOOL</h1>
+      <h1>{{ tabStore.currentTab.title }}</h1>
     </div>
   </div>
 </template>
 
 <style scoped>
   .appbar {
-    height: 3rem;
+    height: var(--height-appBar);
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid var(--accent);
+    border-bottom: 2px solid var(--palette-accent);
+    box-shadow: 0 -2px 2px 4px var(--palette-shadow);
+    z-index: 100;
   }
   .apptitle {
-    width: 100%;
-    text-align: center;
+    padding-right: 1rem;
   }
   button {
     display: block;

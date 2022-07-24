@@ -4,6 +4,7 @@
     "paths": {
         "@c/*": ["components/*"],
         "@a/*": ["assets/*"],
+        "@s/*": ["stores/*"]
     },
     "target": "esnext",
     "useDefineForClassFields": true,

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import { tabMap, tabStore } from '@s/tabStore'
   import AppBar from './AppBar.vue'
   import AppMenu from './AppMenu.vue'
 </script>
@@ -7,7 +8,13 @@
   <div class="layout full-height">
     <AppMenu />
     <AppBar />
-    <div class="view full-height">mainView</div>
+    <div class="view full-height">
+      <component
+        :is="tabMap[tabStore.currentTab.id]"
+        v-if="tabStore.currentTab"
+      />
+      <div v-else>Something went wrong =(</div>
+    </div>
   </div>
 </template>
 
