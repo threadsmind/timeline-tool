@@ -14,8 +14,6 @@
     font-weight: 400;
 
     color-scheme: light dark;
-    color: var(--palette-primary);
-    background-color: var(--palette-secondary);
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -27,6 +25,7 @@
     --palette-secondary: #1d1e1c;
     --palette-accent: #266411;
     --palette-shadow: #121212;
+    --palette-warn: #d01742;
 
     --z-index-appBar: 100;
     --z-index-menu: 50;
@@ -39,8 +38,6 @@
     box-sizing: border-box;
     max-width: 100%;
     max-height: 100%;
-    color: var(--palette-primary);
-    background-color: var(--palette-secondary);
   }
   body,
   html {
@@ -48,6 +45,8 @@
     margin: 0;
     max-width: 100vw;
     max-height: 100vh;
+    color: var(--palette-primary);
+    background-color: var(--palette-secondary);
   }
   h1 {
     box-sizing: content-box;
@@ -73,10 +72,20 @@
     border-radius: 0;
     border-style: none;
     padding: var(--spacing);
+    cursor: pointer;
+  }
+  button:hover,
+  button:active {
+    opacity: 0.7;
   }
   button:focus,
   button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
+  }
+  ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
   }
 
   #app {
@@ -89,7 +98,7 @@
   }
 
   .tab-panel {
-    margin: var(--spacing);
+    padding: var(--spacing);
   }
 
   @media (prefers-color-scheme: light) {
@@ -97,6 +106,7 @@
       --palette-primary: #1d1e1c;
       --palette-secondary: #e6f3e2;
       --palette-accent: #266411;
+      --palette-shadow: #c0c0c0;
     }
   }
 </style>

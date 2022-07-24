@@ -36,6 +36,7 @@
     width: 75%;
     box-shadow: 5px 0 5px var(--palette-shadow);
     z-index: var(--z-index-menu);
+    background-color: var(--palette-secondary);
   }
   .drawer-background {
     position: absolute;

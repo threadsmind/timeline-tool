@@ -20,6 +20,7 @@
     align-items: center;
     border-bottom: 2px solid var(--palette-accent);
     box-shadow: 0 -2px 2px 4px var(--palette-shadow);
+    background-color: var(--palette-secondary);
     z-index: 100;
   }
   .apptitle {
