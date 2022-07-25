@@ -20,7 +20,7 @@
   watch(
     () => timelineStore.focusItem.date,
     (date) => {
-      timelineStore.focusItem.numericalData = Date.parse(date)
+      timelineStore.focusItem.numericalDate = Date.parse(date)
     }
   )
 </script>

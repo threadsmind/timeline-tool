@@ -11,13 +11,18 @@
 
 <template>
   <BaseDrawer axis="horizontal" :drawer-store="menuStore">
-    <ul>
-      <li v-for="tab in tabStore.tabs" :key="tab.id">
-        <button @click="setCurrentTab(tab.id)">
-          {{ tab.tabName }}
-        </button>
-      </li>
-    </ul>
+    <nav>
+      <ul>
+        <li v-for="tab in tabStore.tabs" :key="tab.id">
+          <button
+            :aria-label="`Open ${tab.tabName}`"
+            @click="setCurrentTab(tab.id)"
+          >
+            {{ tab.tabName }}
+          </button>
+        </li>
+      </ul>
+    </nav>
   </BaseDrawer>
 </template>
 

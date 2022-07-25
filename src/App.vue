@@ -103,6 +103,15 @@
     padding: var(--spacing);
   }
 
+  .contain-text {
+    overflow: clip;
+    text-overflow: ellipsis;
+  }
+
+  .one-line-text {
+    white-space: nowrap;
+  }
+
   @media (prefers-color-scheme: light) {
     :root {
       --palette-primary: #1d1e1c;

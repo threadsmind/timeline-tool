@@ -4,7 +4,7 @@ export class TimelineItem {
   id: number
   title: string
   date: string
-  numericalData: number
+  numericalDate: number
   description: string
 
   constructor(
@@ -16,7 +16,7 @@ export class TimelineItem {
     this.id = Date.now()
     this.title = _title
     this.date = _date
-    this.numericalData = _numericalDate
+    this.numericalDate = _numericalDate
     this.description = _description
   }
 }

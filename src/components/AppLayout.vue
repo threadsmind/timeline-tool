@@ -10,13 +10,13 @@
     <AppMenu />
     <EditorForm />
     <AppBar />
-    <div class="view full-height">
+    <main class="view full-height">
       <component
         :is="tabMap[tabStore.currentTab.id]"
         v-if="tabStore.currentTab"
       />
       <div v-else>Something went wrong =(</div>
-    </div>
+    </main>
   </div>
 </template>
 

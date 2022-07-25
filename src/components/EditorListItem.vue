@@ -17,9 +17,21 @@
 
 <template>
   <div class="editor-list-item">
-    <div class="item-title"><slot></slot></div>
-    <button class="full-height" @click="handleEdit">edit</button>
-    <button class="full-height delete" @click="handleDelete">del</button>
+    <div class="item-title contain-text one-line-text"><slot></slot></div>
+    <button
+      class="btn-square"
+      :aria-label="`edit ${props.timelineItem.title}`"
+      @click="handleEdit"
+    >
+      edit
+    </button>
+    <button
+      :aria-label="`delete ${props.timelineItem.title}`"
+      class="btn-square delete"
+      @click="handleDelete"
+    >
+      del
+    </button>
   </div>
 </template>
 
@@ -36,8 +48,8 @@
   .item-title {
     flex-grow: 1;
     padding-right: var(--spacing);
-    overflow: hidden;
     padding-left: var(--spacing);
+    max-width: calc(100% - (var(--height-appBar) * 2) - (var(--spacing) / 2));
   }
   .delete {
     background-color: var(--palette-warn);
@@ -45,6 +57,7 @@
     margin-left: calc(var(--spacing) / 2);
   }
   button {
+    height: var(--height-appBar);
     width: var(--height-appBar);
   }
 
