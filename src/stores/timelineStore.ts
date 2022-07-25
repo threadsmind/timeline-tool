@@ -1,7 +1,7 @@
 import { reactive } from 'vue'
 
 export class TimelineItem {
-  id: number
+  readonly id: number
   title: string
   date: string
   numericalDate: number
@@ -24,10 +24,12 @@ export class TimelineItem {
 export class Timeline {
   items: TimelineItem[]
   focusItem: TimelineItem
+  modifiedSinceLastSort: boolean
 
   constructor(_items: TimelineItem[]) {
     this.items = _items || []
     this.focusItem = new TimelineItem('', '', 0, '')
+    this.modifiedSinceLastSort = true
   }
 
   addItem(newItem: TimelineItem) {
@@ -45,6 +47,14 @@ export class Timeline {
 
   setFocus(item: TimelineItem) {
     this.focusItem = item
+  }
+
+  hasBeenModified() {
+    this.modifiedSinceLastSort === true
+  }
+
+  hasBeenSorted() {
+    this.modifiedSinceLastSort === false
   }
 }
 

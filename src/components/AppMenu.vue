@@ -27,11 +27,6 @@
 </template>
 
 <style scoped>
-  ul {
-    padding: 0;
-    list-style: none;
-    margin: 0;
-  }
   li {
     margin-top: var(--spacing);
   }

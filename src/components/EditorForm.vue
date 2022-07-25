@@ -8,6 +8,7 @@
     if (timelineStore.focusItem.title && timelineStore.focusItem.date) {
       timelineStore.removeItem(timelineStore.focusItem)
       timelineStore.addItem(timelineStore.focusItem)
+      timelineStore.hasBeenModified()
       editorStore.toggleMenu()
     } else {
       console.log('Empty data not saved!')
@@ -77,8 +78,5 @@
     min-width: 100%;
     max-width: 100%;
     max-height: 60vh;
-  }
-  h3 {
-    margin: 0;
   }
 </style>

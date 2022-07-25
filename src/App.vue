@@ -55,6 +55,13 @@
     height: 0;
     overflow: visible;
   }
+  h2,
+  h3 {
+    margin: 0;
+  }
+  h2 {
+    margin-bottom: var(--spacing);
+  }
   button,
   input,
   select {

@@ -21,7 +21,10 @@
           </li>
         </ul>
       </div>
-      <div v-else class="tab-panel">No timeline data. =(</div>
+      <div v-else class="tab-panel">
+        <h2>No Timeline Events</h2>
+        <div>Use the "New Entry" button to add new events!</div>
+      </div>
     </div>
     <div class="button-container">
       <button aria-label="Add new timeline entry" @click="handleNewEntry">
