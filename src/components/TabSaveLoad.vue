@@ -1,5 +1,7 @@
 <script setup lang="ts">
-  import { Timeline, TimelineItem, timelineStore } from '@s/timelineStore'
+  import { timelineStore } from '@s/timelineStore'
+  import { saveTimeline } from '@u/localStorage'
+  import { timelineStringToObject } from '@u/timelineStringToObject'
   import { onBeforeMount, ref } from 'vue'
 
   const timelineJsonText = ref('')
@@ -17,35 +19,12 @@
   })
 
   const handleLoad = () => {
-    try {
-      const dirtyTimelineData = JSON.parse(timelineJsonText.value)?.items
-      const maybeTimelineData = Array.isArray(dirtyTimelineData)
-        ? dirtyTimelineData
-        : []
-      const timelineData = maybeTimelineData
-        .filter(
-          (maybeItem: TimelineItem) =>
-            maybeItem &&
-            typeof maybeItem.id === 'number' &&
-            typeof maybeItem.date === 'string' &&
-            typeof maybeItem.description === 'string' &&
-            typeof maybeItem.numericalDate === 'number' &&
-            typeof maybeItem.title === 'string'
-        )
-        .map(
-          (item) =>
-            new TimelineItem(
-              item.title,
-              item.date,
-              item.numericalDate,
-              item.description,
-              item.id
-            )
-        )
-      const timeline = new Timeline(timelineData)
+    const timeline = timelineStringToObject(timelineJsonText.value)
+    if (timeline) {
       timelineStore.timeline = timeline
+      saveTimeline(timeline)
       jsonError.value = false
-    } catch (e) {
+    } else {
       jsonError.value = true
     }
   }

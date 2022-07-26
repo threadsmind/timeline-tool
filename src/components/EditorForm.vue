@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { editorStore } from '@s/drawerStore'
   import { timelineStore } from '@s/timelineStore'
+  import { saveTimeline } from '@u/localStorage'
   import { watch } from 'vue'
   import BaseDrawer from './BaseDrawer.vue'
 
@@ -12,6 +13,7 @@
       timelineStore.timeline.removeItem(timelineStore.timeline.focusItem)
       timelineStore.timeline.addItem(timelineStore.timeline.focusItem)
       timelineStore.timeline.hasBeenModified()
+      saveTimeline(timelineStore.timeline)
       editorStore.toggleMenu()
     } else {
       console.log('Empty data not saved!')

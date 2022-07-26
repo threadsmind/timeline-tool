@@ -1,3 +1,4 @@
+import { loadTimeline } from '@u/localStorage'
 import { reactive } from 'vue'
 
 export class TimelineItem {
@@ -59,5 +60,5 @@ export class Timeline {
   }
 }
 
-const timelineState = new Timeline([])
+const timelineState = loadTimeline() || new Timeline([])
 export const timelineStore = reactive({ timeline: timelineState })
