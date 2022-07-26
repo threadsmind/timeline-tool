@@ -5,6 +5,7 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  base: '/timeline-tool/',
   resolve: {
     alias: {
       '@c': path.resolve(__dirname, './src/components'),
