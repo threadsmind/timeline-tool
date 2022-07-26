@@ -11,9 +11,10 @@ export class TimelineItem {
     _title: string,
     _date: string,
     _numericalDate: number,
-    _description: string
+    _description: string,
+    _id?: number
   ) {
-    this.id = Date.now()
+    this.id = _id || Date.now()
     this.title = _title
     this.date = _date
     this.numericalDate = _numericalDate
@@ -59,4 +60,4 @@ export class Timeline {
 }
 
 const timelineState = new Timeline([])
-export const timelineStore = reactive(timelineState)
+export const timelineStore = reactive({ timeline: timelineState })

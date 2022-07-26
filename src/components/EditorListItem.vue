@@ -7,11 +7,11 @@
   }>()
 
   const handleEdit = () => {
-    timelineStore.focusItem = props.timelineItem
+    timelineStore.timeline.focusItem = props.timelineItem
     editorStore.toggleMenu()
   }
   const handleDelete = () => {
-    timelineStore.removeItem(props.timelineItem)
+    timelineStore.timeline.removeItem(props.timelineItem)
   }
 </script>
 

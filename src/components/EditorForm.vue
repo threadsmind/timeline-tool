@@ -5,10 +5,13 @@
   import BaseDrawer from './BaseDrawer.vue'
 
   const handleSave = () => {
-    if (timelineStore.focusItem.title && timelineStore.focusItem.date) {
-      timelineStore.removeItem(timelineStore.focusItem)
-      timelineStore.addItem(timelineStore.focusItem)
-      timelineStore.hasBeenModified()
+    if (
+      timelineStore.timeline.focusItem.title &&
+      timelineStore.timeline.focusItem.date
+    ) {
+      timelineStore.timeline.removeItem(timelineStore.timeline.focusItem)
+      timelineStore.timeline.addItem(timelineStore.timeline.focusItem)
+      timelineStore.timeline.hasBeenModified()
       editorStore.toggleMenu()
     } else {
       console.log('Empty data not saved!')
@@ -19,9 +22,9 @@
   }
 
   watch(
-    () => timelineStore.focusItem.date,
+    () => timelineStore.timeline.focusItem.date,
     (date) => {
-      timelineStore.focusItem.numericalDate = Date.parse(date)
+      timelineStore.timeline.focusItem.numericalDate = Date.parse(date)
     }
   )
 </script>
@@ -32,16 +35,22 @@
       <h3>New Item</h3>
       <label>
         <span>Title</span>
-        <input v-model.lazy="timelineStore.focusItem.title" type="text" />
+        <input
+          v-model.lazy="timelineStore.timeline.focusItem.title"
+          type="text"
+        />
       </label>
       <label>
         <span>Date</span>
-        <input v-model.lazy="timelineStore.focusItem.date" type="date" />
+        <input
+          v-model.lazy="timelineStore.timeline.focusItem.date"
+          type="date"
+        />
       </label>
       <label>
         <span>Description</span>
         <textarea
-          v-model.lazy="timelineStore.focusItem.description"
+          v-model.lazy="timelineStore.timeline.focusItem.description"
           rows="8"
         ></textarea>
       </label>
@@ -70,13 +79,10 @@
   label {
     display: block;
   }
-  input,
-  textarea {
+  input {
     width: 100%;
   }
   textarea {
-    min-width: 100%;
-    max-width: 100%;
     max-height: 60vh;
   }
 </style>

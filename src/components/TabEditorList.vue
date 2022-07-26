@@ -4,7 +4,7 @@
   import EditorListItem from './EditorListItem.vue'
 
   const handleNewEntry = () => {
-    timelineStore.setFocus(new TimelineItem('', '', 0, ''))
+    timelineStore.timeline.setFocus(new TimelineItem('', '', 0, ''))
     editorStore.toggleMenu()
   }
 </script>
@@ -12,9 +12,12 @@
 <template>
   <div class="full-height editor-tab">
     <div class="list-container">
-      <div v-if="timelineStore.items.length !== 0" class="list-scroll-panel">
+      <div
+        v-if="timelineStore.timeline.items.length !== 0"
+        class="list-scroll-panel"
+      >
         <ul>
-          <li v-for="item in timelineStore.items" :key="item.id">
+          <li v-for="item in timelineStore.timeline.items" :key="item.id">
             <EditorListItem :timeline-item="item">{{
               item.title
             }}</EditorListItem>

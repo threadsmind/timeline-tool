@@ -87,6 +87,10 @@
   button:active {
     opacity: 0.7;
   }
+  button:disabled {
+    opacity: 0.6;
+    cursor: initial;
+  }
   button:focus,
   button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
@@ -95,6 +99,11 @@
     padding: 0;
     list-style: none;
     margin: 0;
+  }
+  textarea {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
   }
 
   #app {
@@ -105,18 +114,18 @@
   .full-height {
     height: 100%;
   }
-
   .tab-panel {
     padding: var(--spacing);
   }
-
   .contain-text {
     overflow: clip;
     text-overflow: ellipsis;
   }
-
   .one-line-text {
     white-space: nowrap;
+  }
+  .content {
+    margin-bottom: var(--spacing);
   }
 
   @media (prefers-color-scheme: light) {

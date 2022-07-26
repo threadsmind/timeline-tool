@@ -1,5 +1,6 @@
 import TabEditorListVue from '@c/TabEditorList.vue'
 import TabLandingVue from '@c/TabLanding.vue'
+import TabSaveLoadVue from '@c/TabSaveLoad.vue'
 import TabTimelineVue from '@c/TabTimeline.vue'
 import { Component, reactive } from 'vue'
 
@@ -36,6 +37,7 @@ export const tabMap = {
   landing: TabLandingVue,
   editor: TabEditorListVue,
   timeline: TabTimelineVue,
+  saveLoad: TabSaveLoadVue,
 } as TabMap
 
 const tabs: TabData[] = [
@@ -53,6 +55,11 @@ const tabs: TabData[] = [
     id: 'timeline',
     title: 'Timeline',
     tabName: 'Timeline',
+  },
+  {
+    id: 'saveLoad',
+    title: 'Save & Load',
+    tabName: 'Save & Load',
   },
 ]
 const tabState = new TabState(tabs[0].id, tabs)

@@ -3,20 +3,20 @@
   import { onBeforeMount } from 'vue'
 
   onBeforeMount(() => {
-    if (timelineStore.modifiedSinceLastSort) {
-      timelineStore.items.sort((a, b) =>
+    if (timelineStore.timeline.modifiedSinceLastSort) {
+      timelineStore.timeline.items.sort((a, b) =>
         a.numericalDate > b.numericalDate ? 1 : 0
       )
-      timelineStore.hasBeenSorted()
+      timelineStore.timeline.hasBeenSorted()
     }
   })
 </script>
 
 <template>
   <div class="tab-panel timeline-container">
-    <div v-if="timelineStore.items.length > 0">
+    <div v-if="timelineStore.timeline.items.length > 0">
       <div
-        v-for="(item, index) in timelineStore.items"
+        v-for="(item, index) in timelineStore.timeline.items"
         :key="item.id"
         class="timeline-item-container"
       >
@@ -30,7 +30,7 @@
           <div class="timeline-item-description">{{ item.description }}</div>
         </div>
         <div
-          v-if="index !== timelineStore.items.length - 1"
+          v-if="index !== timelineStore.timeline.items.length - 1"
           class="timeline-spacer"
         >
           <img src="@a/material_arrow_down.svg" role="presentation" alt="" />
